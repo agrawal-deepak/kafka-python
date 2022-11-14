@@ -14,10 +14,10 @@ Below are the steps to reproduce the solution on your local machine:
    Command to create output topic: **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic output_topic**<br/><br/>
 - Once topics are created, you can start publishing the messsges to input_topic. Open a new terminal and use below command to publish messages to input_topic:<br/><br/>
   **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic input_topic**<br/><br/>
-  Once you press the Enter, it will prompt you for the message. Enter the message in json format and press Enter.<br/> 
+  Once you press the Enter, it will prompt you for the input message. Enter as many messages as you want in json format and press Enter.<br/> 
   As soon as you press Enter, you can see the consumer has started receiving messages. You can go to the terminal where you ran "docker-compose up --build" to see all     the messages received by consumer.<br/><br/>
 - You can also verify whether the consumed messsages has been processed and forwared to another topic(output_topic) by running this command in a new terminal:<br/><br/>
-  **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic output_topic** <br/><br/>
+  **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic output_topic --from-beginning** <br/><br/>
 - To stop the services, run this command: **docker-compose stop** <br/>
 - To remove the containers, run this command: **docker-compose down** 
    
