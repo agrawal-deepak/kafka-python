@@ -1,4 +1,4 @@
-# The purpose of this project is to consume messages from Kafka Topic(input_topic), convert the timestamp column from Europe/Berlin timezone to UTC timezone and send the corrected messages to another Kafka Topic(output_topic).
+# The purpose of this project is to consume messages from Kafka Topic(input_topic), convert the myTimestamp column from Europe/Berlin timezone to UTC timezone and send the corrected messages to another Kafka Topic(output_topic).
 <br/>
 
 Below are the steps to reproduce the solution on your local machine:
