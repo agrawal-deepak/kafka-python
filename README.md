@@ -19,6 +19,7 @@ Below are the steps to reproduce the solution on your local machine:
 - You can also verify whether the consumed messsages has been processed and forwared to another topic(output_topic) by running this command in a new terminal:<br/><br/>
   **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic output_topic --from-beginning** <br/><br/>
 - To stop the services, run this command: **docker-compose stop** <br/>
-- To remove the containers, run this command: **docker-compose down** 
-   
+- To remove the containers, run this command: **docker-compose down** <br/><br/>
+
+**P.S: Logging level is set to INFO for the development environment only.**
    
