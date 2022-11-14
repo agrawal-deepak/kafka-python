@@ -4,7 +4,7 @@
 Below are the steps to reproduce the solution on your local machine:
 <br/><br/>
 
-- Clone this repository to any folder on your machine: git clone https://github.com/agrawal-deepak/kafka-python.git
+- Clone this repository to any folder on your machine: **git clone https://github.com/agrawal-deepak/kafka-python.git**
 - cd kafka-python/
 - Build the image using command: **docker build -t kafka-python .**
 - Start the containers with command: **docker-compose up --build**
@@ -17,6 +17,8 @@ Below are the steps to reproduce the solution on your local machine:
   Once you press the Enter, it will prompt you for the message. Enter the message in json format and press Enter.<br/> 
   As soon as you press Enter, you can see the consumer has started receiving messages. You can go to the terminal where you ran "docker-compose up --build" to see all     the messages received by consumer.<br/><br/>
 - You can also verify whether the consumed messsages has been processed and forwared to another topic(output_topic) by running this command in a new terminal:<br/><br/>
-  **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic output_topic**
+  **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic output_topic** <br/><br/>
+- To stop the services, run this command: **docker-compose stop** <br/>
+- To remove the containers, run this command: **docker-compose down** 
    
    
