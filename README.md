@@ -1,8 +1,8 @@
-#### kafka-python
+# The purpose of this project is to consume messages from Kafka Topic(input_topic), convert the timestamp column from Europe/Berlin timezone to UTC timezone and send the corrected messages to another Kafka Topic(output_topic).
 
-## The purpose of this project is to consume messages from Kafka Topic(input_topic), convert the timestamp column from Europe/Berlin timezone to UTC timezone and send the corrected messages to another Kafka Topic(output_topic).
 
 Below are the steps to reproduce the solution on your local machine:
+
 
 - Clone this repository to any folder on your machine: git clone https://github.com/agrawal-deepak/kafka-python.git
 - cd kafka-python/
@@ -10,7 +10,7 @@ Below are the steps to reproduce the solution on your local machine:
 - Start the containers with command: **docker-compose up --build**
 - Run command "docker ps" to confirm all the running containers.
 - You don't need to manually create the input and output topics. It will be automatically created when referenced for the first time. If you want, you can also manully     create the input and output topics with the below command. Open a new terminal and type the below commands:
-  Command to create input topic: **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic input_topic**
+  Command to create input topic: **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic input_topic** <br/>
    Command to create output topic: **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic output_topic**
 - Once topics are created, you can start publishing the messsges to input_topic. Open a new terminal and use below command to publish messages to input_topic:
   **docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic input_topic**
